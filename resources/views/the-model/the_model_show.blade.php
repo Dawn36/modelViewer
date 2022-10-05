@@ -60,7 +60,7 @@
                                     <label class="fw-normal text-muted fs-7">Please upload a GLB file. A Design will be created. You can edit the details thereafter.</label>
                                 </div>
                                 @endif
-                                @if($theModel->user_id == Auth::user()->id)
+                                @if(Auth::user()->hasRole('user') && $theModel->user_id == Auth::user()->id)
                                 <div class="fv-row mb-7">
                                     <label class="required fw-bold fs-6 mb-2">Model Image</label>
                                     <input type="file"  name="model_image" class="form-control form-control-solid mb-3 mb-lg-0" />
@@ -81,7 +81,7 @@
                             </div>
                             <!--end::Scroll-->
                             <!--begin::Actions-->
-                            @if($theModel->user_id == Auth::user()->id)
+                            @if(Auth::user()->hasRole('user') && $theModel->user_id == Auth::user()->id)
                                 <button type="reset" class="btn btn-sm btn-light me-3" data-bs-dismiss="modal" aria-label="Close">Discard</button>
                             <button type="submit" class="btn btn-sm btn-light-primary">Submit</button>
                             @endif
