@@ -17,7 +17,7 @@ class DesignController extends Controller
         ->when($search, function ($query, $search) {
             return $query->where('name', 'like', '%' . $search . '%')->orWhere('description', 'like', '%'.$search.'%');
         })
-        ->paginate(1);
+        ->paginate(9);
         $theModel->appends(['search' => $search]);
         return view('design/design_index',compact('theModel'));
     }
