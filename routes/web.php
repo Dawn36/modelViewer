@@ -26,14 +26,13 @@ Route::get('/', function () {
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth'])->name('dashboard');
-
+Route::middleware(['auth'])->group(function () {
 Route::resource('user', UserController::class);
 Route::resource('the_model', TheModelController::class);
-Route::get('model_qr', [TheModelController::class, 'modelQr'])->name('model_qr');
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('model_url/{id}', [TheModelController::class, 'modelUrl'])->name('model_url');
 Route::get('design_index', [DesignController::class, 'index'])->name('design_index');
 Route::get('design_show/{id}', [DesignController::class, 'modelShow'])->name('design_show');
+Route::get('model_qr', [TheModelController::class, 'modelQr'])->name('model_qr');
 
 Route::get('analytics_index', [AnalyticsController::class, 'index'])->name('analytics_index');
 Route::post('analytics_index', [AnalyticsController::class, 'index'])->name('analytics_index');
@@ -41,4 +40,9 @@ Route::post('analytics_index', [AnalyticsController::class, 'index'])->name('ana
 Route::resource('settings', SettingsController::class);
 Route::post('/settings/{id}/updateEmail', [SettingsController::class, 'updateEmail'])->name('updateEmail');
 Route::post('/settings/{id}/updatePassword', [SettingsController::class, 'updatePassword'])->name('updatePassword');
+
+});
+Route::get('model_url/{id}', [TheModelController::class, 'modelUrl'])->name('model_url');
+
+
 require __DIR__.'/auth.php';

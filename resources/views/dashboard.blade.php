@@ -12,7 +12,7 @@
                 <div class="col-xl-5">
                     <div class="card card-xl-stretch mb-xl-8">
                         <div class="card-body d-flex align-items-center pt-3 pb-0">
-                            <img src="assets/media/avatars/300-3.jpg" alt="" class="me-3 br-50px h-60px h-lg-100px">
+                            <img src="{{ asset('/profile/' . Auth::user()->profile_picture)}}" alt="" class="me-3 br-50px h-60px h-lg-100px">
                             <div class="d-flex flex-column flex-grow-1 py-2 py-lg-13">
                                 <a href="#" class="fw-bolder text-dark fs-4 mb-2 text-hover-primary">Hello, Tony Giudice</a>
                                 <span class="fw-bold text-muted fs-5">Let's have a look on your progress so far.</span>

@@ -49,6 +49,17 @@
                                     <label class="required fw-bold fs-6 mb-2">Model Name</label>
                                     <input type="text" required name="name" value="{{ $theModel->name}}" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Please Enter the Model Name here." />
                                 </div>
+                                @if(Auth::user()->hasRole('admin'))
+                                <div class="fv-row mb-7">
+                                    <label class="required fw-bold fs-6 mb-2">Model Image</label>
+                                    <input type="file"  name="model_image" class="form-control form-control-solid mb-3 mb-lg-0" />
+                                </div>
+                                <div class="fv-row mb-7">
+                                    <label class="required fw-bold fs-6 mb-2">3D Model</label>
+                                    <input type="file"  name="3d_model" class="form-control form-control-solid mb-3 mb-lg-0" />
+                                    <label class="fw-normal text-muted fs-7">Please upload a GLB file. A Design will be created. You can edit the details thereafter.</label>
+                                </div>
+                                @endif
                                 @if($theModel->user_id == Auth::user()->id)
                                 <div class="fv-row mb-7">
                                     <label class="required fw-bold fs-6 mb-2">Model Image</label>
@@ -73,7 +84,12 @@
                             @if($theModel->user_id == Auth::user()->id)
                                 <button type="reset" class="btn btn-sm btn-light me-3" data-bs-dismiss="modal" aria-label="Close">Discard</button>
                             <button type="submit" class="btn btn-sm btn-light-primary">Submit</button>
-                            @endif                            
+                            @endif
+                            @if(Auth::user()->hasRole('admin'))
+                            <button type="reset" class="btn btn-sm btn-light me-3" data-bs-dismiss="modal" aria-label="Close">Discard</button>
+                            <button type="submit" class="btn btn-sm btn-light-primary">Submit</button>
+                            @endif
+
                             <!--end::Actions-->
                         </div>
                             <!--end::Actions-->
