@@ -96,7 +96,7 @@
                                         <div class="image-input image-input-outline" data-kt-image-input="true"
                                             style="background-image: url({{ asset('/profile/' . $data['profile_picture']) }})">
                                             <div class="image-input-wrapper w-125px h-125px"
-                                                style="background-image: url({{ asset('/profile/' . $data['profile_picture']) }})">
+                                                style="background-image: url('{{ asset('/profile/' . $data['profile_picture']) }}')">
                                             </div>
                                             <label
                                                 class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
