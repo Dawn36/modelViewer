@@ -65,7 +65,7 @@
                             </div>
                             <!--begin::Card title-->
                             <!--begin::Card toolbar-->
-                            @if(Auth::user()->hasRole('user'))
+                            {{-- @if(Auth::user()->hasRole('user')) --}}
                             <div class="card-toolbar">
                                 <!--begin::Toolbar-->
                                 <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
@@ -84,7 +84,7 @@
                                 </div>
                                 <!--end::Toolbar-->
                             </div>
-                            @endif
+                            {{-- @endif --}}
                             <!--end::Card toolbar-->
                         </div>
                         <!--end::Card header-->
