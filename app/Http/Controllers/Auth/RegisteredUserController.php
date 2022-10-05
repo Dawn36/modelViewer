@@ -52,11 +52,13 @@ class RegisteredUserController extends Controller
         ]);
         if ($request->hasFile('file')) {
             $userId=$user->id;
+            $user= User::find($userId);
             $path = "profile/" . $userId;
-            $file = $request->file('profile_picture');
+            $file = $request->file('file');
             $filename = date('YmdHi') . $file->getClientOriginalName();
             $file->move(public_path($path), $filename);
             $user['profile_picture'] = $userId . "/" . $filename;
+            $user->save();
         }
 
         $user->attachRole($request->role_id);

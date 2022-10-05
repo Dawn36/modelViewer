@@ -86,6 +86,7 @@
                                         {{ Route::currentRouteName() == 'dashboard'  ? 'Dashboard' : '' }}
                                         {{ Route::currentRouteName() == 'the_model.index' || Route::currentRouteName() == 'the_model.show'  ? 'Model' : '' }}
                                         {{ Route::currentRouteName() == 'design_index'  ? 'Design' : '' }}
+                                        {{ Route::currentRouteName() == 'analytics_index'  ? 'Analytics' : '' }}
                                         
                                     </h1>
                                     <!--end::Page Title-->

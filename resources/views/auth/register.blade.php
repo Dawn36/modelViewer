@@ -66,7 +66,7 @@
                             </div>
                             <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
                         </div>
-                        <input type="hidden" name="role_id" value="1"/>
+                        <input type="hidden" name="role_id" value="2"/>
                         <div class="row mb-10">
                             <div class="col-lg-6">
                                 <label class="form-label fs-6 fw-bolder text-dark">First Name</label>
