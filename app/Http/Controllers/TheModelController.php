@@ -24,13 +24,13 @@ class TheModelController extends Controller
             $model= DB::select(DB::raw("SELECT  tm.*,COUNT(dv.`the_models_id`) AS views_count FROM `the_models` tm LEFT JOIN `design_views` dv 
               ON tm.`id` = dv.`the_models_id` 
               where tm.`user_id`='$userId'
-              GROUP BY dv.`the_models_id`"));
+              GROUP BY tm.`id`"));
         }
         else
         {
             $model= DB::select(DB::raw("SELECT  tm.*,COUNT(dv.`the_models_id`) AS views_count FROM `the_models` tm LEFT JOIN `design_views` dv 
             ON tm.`id` = dv.`the_models_id` 
-            GROUP BY dv.`the_models_id`"));
+            GROUP BY tm.`id`"));
         }
         
         // $model=TheModel::get();
