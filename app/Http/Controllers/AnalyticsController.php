@@ -27,6 +27,7 @@ class AnalyticsController extends Controller
               return $query->where('tm.id', $modelId);
             })
             ->groupByRaw('CONVERT(MONTHNAME(dv.created_at),char(3))')
+            ->orderByDesc('month')
             ->get();
        
        $month=array();
