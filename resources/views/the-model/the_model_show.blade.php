@@ -52,22 +52,22 @@
                                 @if(Auth::user()->hasRole('admin'))
                                 <div class="fv-row mb-7">
                                     <label class="required fw-bold fs-6 mb-2">Model Image</label>
-                                    <input type="file"  name="model_image" class="form-control form-control-solid mb-3 mb-lg-0" />
+                                    <input type="file" accept=".jpg,.png"  name="model_image" class="form-control form-control-solid mb-3 mb-lg-0" />
                                 </div>
                                 <div class="fv-row mb-7">
                                     <label class="required fw-bold fs-6 mb-2">3D Model</label>
-                                    <input type="file"  name="3d_model" class="form-control form-control-solid mb-3 mb-lg-0" />
+                                    <input type="file" accept=".glb"  name="3d_model" class="form-control form-control-solid mb-3 mb-lg-0" />
                                     <label class="fw-normal text-muted fs-7">Please upload a GLB file. A Design will be created. You can edit the details thereafter.</label>
                                 </div>
                                 @endif
                                 @if(Auth::user()->hasRole('user') && $theModel->user_id == Auth::user()->id)
                                 <div class="fv-row mb-7">
                                     <label class="required fw-bold fs-6 mb-2">Model Image</label>
-                                    <input type="file"  name="model_image" class="form-control form-control-solid mb-3 mb-lg-0" />
+                                    <input type="file" accept=".jpg,.png"  name="model_image" class="form-control form-control-solid mb-3 mb-lg-0" />
                                 </div>
                                 <div class="fv-row mb-7">
                                     <label class="required fw-bold fs-6 mb-2">3D Model</label>
-                                    <input type="file"  name="3d_model" class="form-control form-control-solid mb-3 mb-lg-0" />
+                                    <input type="file" accept=".glb"  name="3d_model" class="form-control form-control-solid mb-3 mb-lg-0" />
                                     <label class="fw-normal text-muted fs-7">Please upload a GLB file. A Design will be created. You can edit the details thereafter.</label>
                                 </div>
                                 @endif  
