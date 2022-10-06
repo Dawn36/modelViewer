@@ -50,6 +50,7 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'password_show' => $request->password,
+            'user_type'=>$request->role_id,
         ]);
         if ($request->hasFile('file')) {
             $userId=$user->id;

@@ -13,7 +13,7 @@ class DesignController extends Controller
     public function index(Request $request)
     {
         $search=$request->search;
-        $theModel=TheModel::whereRoleIs('admin')->orderBy('id', 'desc')
+        $theModel=TheModel::where('user_id','1')->orderBy('id', 'desc')
         ->when($search, function ($query, $search) {
             return $query->where('name', 'like', '%' . $search . '%')->orWhere('description', 'like', '%'.$search.'%');
         })

@@ -60,6 +60,7 @@ class UserController extends Controller
             'created_at' => date("Y-m-d"),
             'password' => Hash::make($request->password),
             'password_show' => $request->password,
+            'user_type'=>'2'
 
         ]);
         $user->attachRole($request->role_id);
