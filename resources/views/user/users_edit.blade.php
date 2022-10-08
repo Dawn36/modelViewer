@@ -6,8 +6,8 @@
     <div class="d-flex flex-column scroll-y me-n7 pe-7" id="" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
         <div class="fv-row mb-7">
             <label class="d-block fw-bold fs-6 mb-5">Avatar</label>
-            <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url({{asset('profile/'.$user->profile_picture)}})">
-                <div class="image-input-wrapper w-125px h-125px" style="background-image: url({{asset('profile/'.$user->profile_picture)}})">
+            <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('{{asset('profile/'.$user->profile_picture)}}')">
+                <div class="image-input-wrapper w-125px h-125px" style="background-image: url('{{asset('profile/'.$user->profile_picture)}}')">
                 </div>
                 <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
                     <i class="bi bi-pencil-fill fs-7"></i>
