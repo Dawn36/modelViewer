@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 
 class UserController extends Controller
@@ -19,7 +20,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::whereRoleIs('user')->get();
+        $userId=Auth::user()->id;
+        $users = User::Where('id','!=',$userId)->Get();
         return view('user/users_index', compact('users'));
     }
 
@@ -45,7 +47,7 @@ class UserController extends Controller
             'first_name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users,deleted_at,NULL'],
-            'password' => ['required',  Rules\Password::defaults()],
+            'password' => ['required'],
         ]);
 
 
@@ -53,14 +55,13 @@ class UserController extends Controller
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'email' => $request->email,
-            'contact_no' => $request->phone_number,
-            'profile_picture' => $request->profile_picture,
+            'contact_no' => $request->contact_no,
             'company_name' => $request->company_name,
             'created_by' => Auth::user()->id,
             'created_at' => date("Y-m-d"),
             'password' => Hash::make($request->password),
             'password_show' => $request->password,
-            'user_type'=>'2'
+            'user_type'=>$request->role_id
 
         ]);
         $user->attachRole($request->role_id);
@@ -69,13 +70,7 @@ class UserController extends Controller
             $id = $user['id'];
 
             $user = User::find($id);
-            // $folderName = $userId;
-            // $fileName = time();
-            // $previousPic = $user->profile_picture;
-            // $previousPicDest = "profile/" . $previousPic;
-            // File::delete($previousPicDest);
-            // $request->profile_picture->storeAs("profile/$folderName/", $fileName . '.jpg', 'public');
-            // $user->profile_picture = $folderName . '/' . $fileName . '.jpg';
+          
             $path = "profile/" . $id;
             $file = $request->file('file');
             $filename = date('YmdHi') . $file->getClientOriginalName();
@@ -152,8 +147,12 @@ class UserController extends Controller
         $user['company_name'] = $request->company_name;
         $user['email'] = $request->email;
 
+       
+        DB::table('role_user')->where('user_id', $id)->update(['role_id' => $request->role_id]);
+
 
         $user->save();
+
 
         return redirect()->back();
     }

@@ -27,7 +27,7 @@
                                 </div>
                                 <div class="col col-lg-3">
                                     <label class="required fw-bold fs-6 mb-2">Select Date</label>
-                                    <input type="text" name="date" value="{{request()->date}}" class="form-control form-control-solid mb-3 mb-lg-0 kt_datepicker_2"  />
+                                    <input type="month" name="date" value="{{request()->date}}" class="form-control form-control-solid mb-3 mb-lg-0 "  />
                                 </div>
                                 <div class="col mt-8">
                                     <button type="submit" class="btn btn-light-primary">Search</button>

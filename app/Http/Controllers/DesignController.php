@@ -6,14 +6,16 @@ use Illuminate\Http\Request;
 use App\Models\TheModel;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 use Carbon;
 
 class DesignController extends Controller
 {
     public function index(Request $request)
     {
+        $usersId=User::whereRoleIs('admin')->pluck('id')->toArray();
         $search=$request->search;
-        $theModel=TheModel::where('user_id','1')->orderBy('id', 'desc')
+        $theModel=TheModel::whereIn('user_id',$usersId)->orderBy('id', 'desc')
         ->when($search, function ($query, $search) {
             return $query->where('name', 'like', '%' . $search . '%')->orWhere('description', 'like', '%'.$search.'%');
         })

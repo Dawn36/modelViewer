@@ -21,15 +21,15 @@ class TheModelController extends Controller
         $userId=Auth::user()->id;
         if(Auth::user()->hasRole('user'))
         {
-            $model= DB::select(DB::raw("SELECT  tm.*,COUNT(dv.`the_models_id`) AS views_count FROM `the_models` tm LEFT JOIN `design_views` dv 
-              ON tm.`id` = dv.`the_models_id` 
+            $model= DB::select(DB::raw("SELECT  tm.*,u.`first_name`,u.`last_name`,COUNT(dv.`the_models_id`) AS views_count FROM `the_models` tm LEFT JOIN `design_views` dv 
+              ON tm.`id` = dv.`the_models_id` INNER JOIN users u ON u.`id`=tm.`user_id`
               where tm.`user_id`='$userId'
               GROUP BY tm.`id`"));
         }
         else
         {
-            $model= DB::select(DB::raw("SELECT  tm.*,COUNT(dv.`the_models_id`) AS views_count FROM `the_models` tm LEFT JOIN `design_views` dv 
-            ON tm.`id` = dv.`the_models_id` 
+            $model= DB::select(DB::raw("SELECT  tm.*,u.`first_name`,u.`last_name`,COUNT(dv.`the_models_id`) AS views_count FROM `the_models` tm LEFT JOIN `design_views` dv 
+            ON tm.`id` = dv.`the_models_id` INNER JOIN users u ON u.`id`=tm.`user_id`
             GROUP BY tm.`id`"));
         }
         

@@ -6,9 +6,9 @@
 
     <div class="d-flex flex-column scroll-y me-n7 pe-7" id="" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
         <div class="fv-row mb-7">
-            <label class="d-block fw-bold fs-6 mb-5">Benutzerbild</label>
-            <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
-                <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/svg/avatars/blank.svg');">
+            <label class="d-block fw-bold fs-6 mb-5">Avatar</label>
+            <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('theme/assets/media/svg/avatars/blank.png')">
+                <div class="image-input-wrapper w-125px h-125px" style="background-image: url('theme/assets/media/svg/avatars/blank.png');">
                 </div>
                 <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
                     <i class="bi bi-pencil-fill fs-7"></i>
@@ -22,48 +22,45 @@
                     <i class="bi bi-x fs-2"></i>
                 </span>
             </div>
-            <div class="form-text">Erlaubte Dateitypen: png, jpg, jpeg.</div>
+            <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
         </div>
         <div class="fv-row mb-7">
-            <label class="required fw-bold fs-6 mb-2">Vorname</label>
-            <input type="text" name="first_name" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Bitte geben Sie hier Ihren Vornamen ein." required />
+            <label class="required fw-bold fs-6 mb-2">First name</label>
+            <input type="text" name="first_name" value="" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="please enter first name." required />
         </div>
         <div class="fv-row mb-7">
-            <label class="required fw-bold fs-6 mb-2">Nachname</label>
-            <input type="text" name="last_name" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="
-Bitte geben Sie hier Ihren Nachnamen ein." required />
+            <label class="required fw-bold fs-6 mb-2">last name</label>
+            <input type="text" name="last_name" value="" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="please enter last name." required />
         </div>
         <div class="fv-row mb-7">
-            <label class="required fw-bold fs-6 mb-2">E-Mail</label>
-            <input type="email" name="email" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="example@domain.com" required />
+            <label class="required fw-bold fs-6 mb-2">Email</label>
+            <input type="email" name="email" value="" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="example@domain.com" required />
         </div>
         <div class="fv-row mb-7">
-            <label class="required fw-bold fs-6 mb-2">Passwort</label>
-            <input type="password" name="password" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Ab***12" required />
+            <label class="required fw-bold fs-6 mb-2">Phone number</label>
+            <input type="number" min="0" value="" name="contact_no" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="please enter contact no." />
         </div>
         <div class="fv-row mb-7">
-            <label class="required fw-bold fs-6 mb-2">Telefonnummer</label>
-            <input type="number" min="0" name="phone_number" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="
-Bitte geben Sie hier Ihre Telefonnummer ein." required />
+            <label class="required fw-bold fs-6 mb-2">Company name</label>
+            <input type="text" value="" name="company_name" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="please enter company name." />
         </div>
         <div class="fv-row mb-7">
-            <label class="required fw-bold fs-6 mb-2">Straße</label>
-            <input type="text" name="street" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Bitte geben Sie hier Ihre Straße ein." />
+            <label class="required fw-bold fs-6 mb-2">Change role</label>
+            <select name="role_id" class="form-control form-control-solid mb-3 mb-lg-0" required="">
+                <option value="1" >Admin</option>
+                <option value="2" >User</option>
+            </select>
         </div>
         <div class="fv-row mb-7">
-            <label class="required fw-bold fs-6 mb-2">Stadt</label>
-            <input type="text" name="city" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Bitte geben Sie hier Ihre Stadt ein." />
-        </div>
-        <div class="fv-row mb-7">
-            <label class="required fw-bold fs-6 mb-2">Land</label>
-            <input type="text" name="country" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Bitte geben Sie hier Ihr Land ein." />
+            <label class="required fw-bold fs-6 mb-2">Password</label>
+            <input type="password" name="password" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Ab***12" />
         </div>
     </div>
     <!--end::Scroll-->
     <!--begin::Actions-->
     <div class="text-center pt-15">
-        <button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal" aria-label="Close">Verwerfen</button>
-        <button type="submit" class="btn btn-primary">Einreichen</button>
+        <button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal" aria-label="Close">Discard</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </div>
     <!--end::Actions-->
 </form>

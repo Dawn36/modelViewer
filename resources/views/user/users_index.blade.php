@@ -67,7 +67,7 @@
                                 </div>
                                 <!--end::Search-->
                             </div>
-                            {{-- <div class="card-toolbar">
+                            <div class="card-toolbar">
                                 <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
                                     <button type="button" class="btn btn-primary" onclick="addUser()">
                                         <span class="svg-icon svg-icon-2">
@@ -76,10 +76,10 @@
                                                 <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="black" />
                                             </svg>
                                         </span>
-                                        Nutzer hinzufügen
+                                        Add User
                                     </button>
                                 </div>
-                            </div> --}}
+                            </div>
                         </div>
                         
                         <!--end::Card header-->
@@ -111,11 +111,11 @@
                                             <td>{{ucwords($users[$i]->contact_no)}}</td>
                                             <td>{{ucwords($users[$i]->company_name)}}</td>
                                             <td>
-                                                <span class="badge badge-light-info fw-bolder fs-7 px-2 py-1">Users</span>
+                                                <span class="badge badge-light-{{$users[$i]->hasRole('admin') == '1' ? 'info' : 'success'}} fw-bolder fs-7 px-2 py-1">{{$users[$i]->hasRole('admin') == '1' ? 'Admin' : 'User'}}</span>
                                             </td>
                                             <td>{{Date('Y-m-d',strtotime($users[$i]->created_at))}}</td>
                                             <td>
-                                                <a class="btn btn-icon btn-sm btn-color-gray-400 btn-active-icon-primary me-2" data-bs-original-title="Benutzer bearbeiten" onclick="editUser('{{ $users[$i]->id}}')">
+                                                <a class="btn btn-icon btn-sm btn-color-gray-400 btn-active-icon-primary me-2" data-bs-original-title="Edit User" onclick="editUser('{{ $users[$i]->id}}')">
                                                     <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                                     <span class="svg-icon svg-icon-2">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

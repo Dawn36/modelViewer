@@ -98,6 +98,7 @@
                                         <tr class="fw-bold fs-6 text-muted">
                                             <th class="min-w-30px">ID</th>
                                             <th>Design Name</th>
+                                            <th>Added by</th>
                                             <th>Created Date</th>
                                             <th>Views</th>
                                             <th>Actions</th>
@@ -119,6 +120,7 @@
                                                     <a href="{{route('the_model.show',$model[$i]->id)}}" class="text-gray-800 text-hover-primary mb-1">{{ucwords($model[$i]->name)}}</a>
                                                 </div>
                                             </td>
+                                            <td>{{ucwords($model[$i]->first_name)}} {{ucwords($model[$i]->last_name)}}</td>
                                             <td>{{date('Y-m-d',strtotime($model[$i]->created_at))}}</td>
                                             <td>{{$model[$i]->views_count}}</td>
                                             <td>

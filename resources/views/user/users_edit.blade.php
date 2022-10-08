@@ -44,6 +44,13 @@
             <input type="text" value="{{$user->company_name}}" name="company_name" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="please enter company name." />
         </div>
         <div class="fv-row mb-7">
+            <label class="required fw-bold fs-6 mb-2">Change role</label>
+            <select name="role_id" class="form-control form-control-solid mb-3 mb-lg-0" required="">
+                <option value="1" {{$user->hasRole('admin') == '1' ? 'Selected' : ''}}>Admin</option>
+                <option value="2" {{$user->hasRole('admin') == '1' ? '' : 'Selected'}}>User</option>
+            </select>
+        </div>
+        <div class="fv-row mb-7">
             <label class="required fw-bold fs-6 mb-2">Password</label>
             <input type="password" name="password" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Ab***12" />
         </div>
