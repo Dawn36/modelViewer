@@ -185,6 +185,10 @@ class TheModelController extends Controller
     public function modelUrl(int $id)
     {
         $theModel = TheModel::find($id);
+        $dateTime=Controller::currentDateTime();
+        DB::insert('insert into design_views 
+            (user_id,the_models_id,created_at,created_by) values(?,?,?,?)',
+            ['0',$id,$dateTime,'0']);
         return view('the-model/the_model_show_url',compact('theModel'));
 
     }
