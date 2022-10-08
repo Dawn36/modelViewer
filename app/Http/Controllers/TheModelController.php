@@ -182,8 +182,11 @@ class TheModelController extends Controller
         return view('the-model/the_model_qr',compact('theModel'));
 
     }
-    public function modelUrl(int $id)
+    public function modelUrl(string $id)
     {
+        $id=base64_decode($id);
+        $modelLink=explode('{{(----)}}',$id);
+        $id=$modelLink[0];
         $theModel = TheModel::find($id);
         $dateTime=Controller::currentDateTime();
         DB::insert('insert into design_views 

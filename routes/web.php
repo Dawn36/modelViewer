@@ -42,7 +42,7 @@ Route::post('/settings/{id}/updateEmail', [SettingsController::class, 'updateEma
 Route::post('/settings/{id}/updatePassword', [SettingsController::class, 'updatePassword'])->name('updatePassword');
 
 });
-Route::get('model_url/{id}', [TheModelController::class, 'modelUrl'])->name('model_url');
+Route::get('model/{id}', [TheModelController::class, 'modelUrl'])->name('model');
 
 
 require __DIR__.'/auth.php';

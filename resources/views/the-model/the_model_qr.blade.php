@@ -14,10 +14,15 @@
                 <div class="d-flex flex-column scroll-y me-n7 pe-7" id="" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
                     <div class="fv-row mb-7">
                         <label class="fw-bold fs-4 mb-2">Link</label>
-                        <input type="text" name="link" class="form-control form-control-solid mb-3 mb-lg-0" value="{{route('model_url',$theModel->id)}}" readonly/>
+                        @php
+                         $domain = substr (Request::root(), 7);
+                        $modelId=$theModel->id.'{{(----)}}'.$domain;
+                        $modelId=base64_encode($modelId);
+                        @endphp
+                        <input type="text" name="link" class="form-control form-control-solid mb-3 mb-lg-0" value="{{route('model',$modelId)}}" readonly/>
                     </div>
                     @php 
-                        $modelUrl=route('model_url',$theModel->id);
+                        $modelUrl=route('model',$modelId);
                     @endphp
                     <div class="fv-row mb-7">
                         <label class="fw-bold fs-4 mb-2 d-block">QR Code</label>
