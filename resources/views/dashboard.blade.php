@@ -34,7 +34,7 @@
                                 <div class="d-flex align-items-center">
                                     <div class="d-flex flex-column flex-grow-1 my-lg-0 my-2 pr-3">
                                         <a href="#" class="text-dark fw-bolder text-hover-primary fs-5">Total Designs Used</a>
-                                        <h1 class="text-primary fw-bold display-4">7</h1>
+                                        <h1 class="text-primary fw-bold display-4">{{$themodelcount}}</h1>
                                     </div>
                                 </div>
                             </div>

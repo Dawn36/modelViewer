@@ -26,7 +26,6 @@
         <div class="hover-scroll-overlay-y my-5 my-lg-5" id="kt_aside_menu_wrapper" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_aside_logo, #kt_aside_footer" data-kt-scroll-wrappers="#kt_aside_menu" data-kt-scroll-offset="0">
             <!--begin::Menu-->
             <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="#kt_aside_menu" data-kt-menu="true">
-                @if(Auth::user()->hasRole('admin'))
                 <div class="menu-item">
                     <a class="menu-link {{ Route::currentRouteName() == 'dashboard'  ? 'active' : '' }}" href="{{route('dashboard')}}">
                         <span class="menu-icon">
@@ -44,6 +43,8 @@
                         <span class="menu-title">Dashboard</span>
                     </a>
                 </div>
+                @if(Auth::user()->hasRole('admin'))
+               
                 <div class="menu-item">
                     <a class="menu-link {{ Route::currentRouteName() == 'design_index' || Route::currentRouteName() =='design_show'  ? 'active' : '' }}" href="{{route('design_index')}}">
                         <span class="menu-icon">
