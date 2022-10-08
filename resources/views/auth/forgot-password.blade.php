@@ -4,7 +4,7 @@
 
 <head>
     <base href="">
-    <title>Pack Pal - Sign In</title>
+    <title>Model Viewer</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" href="{{ asset('theme/assets/media/logos/logo-5.png')}}" />
@@ -26,7 +26,7 @@
     <!--begin::Root-->
     <div class="d-flex flex-column flex-root">
         <!--begin::Authentication - Sign-in -->
-        <div class="d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed" style="background-image: url({{ asset('') }})">
+        <div class="d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed" style="background-image: url({{ asset('theme/assets/media/illustrations/sketchy-1/') }})">
             <!--begin::Content-->
             <div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
                 <!--begin::Logo-->
@@ -39,7 +39,7 @@
 					<!--begin::Card-->
 					<div class="card rounded-3 w-md-550px">
 						<!--begin::Card body-->
-						<div class="card-body p-10 p-lg-20">
+						<div class="w-lg-500px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
 							<!--begin::Form-->
 							<form class="form w-100 fv-plugins-bootstrap5 fv-plugins-framework" method="POST" action="{{ route('rest_password') }}" >
                                 @csrf
