@@ -48,7 +48,7 @@ button.addEventListener("click", function() {
     // Disable indicator after 3 seconds
     setTimeout(function() {
         button.removeAttribute("data-kt-indicator");
-    }, 3000);
+    }, 10000);
     }
     
 });
