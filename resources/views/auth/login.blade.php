@@ -77,10 +77,10 @@
 
 							<!--end::Input-->
 						</div>
-						{{-- <div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8">
+						<div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8">
                             <div></div>
                             <a href="{{ route('password.request') }}" class="link-primary">Forgot Password ?</a>
-                        </div> --}}
+                        </div>
 						<!--end::Input group-->
 						<!--begin::Actions-->
 						<div class="text-center">

@@ -48,7 +48,7 @@
             <label class="required fw-bold fs-6 mb-2">Change role</label>
             <select name="role_id" class="form-control form-control-solid mb-3 mb-lg-0" required="">
                 <option value="1" >Admin</option>
-                {{-- <option value="2" >User</option> --}}
+                <option value="2" >User</option>
             </select>
         </div>
         <div class="fv-row mb-7">

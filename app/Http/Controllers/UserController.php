@@ -148,7 +148,7 @@ class UserController extends Controller
         $user['email'] = $request->email;
 
        
-        // DB::table('role_user')->where('user_id', $id)->update(['role_id' => $request->role_id]);
+        DB::table('role_user')->where('user_id', $id)->update(['role_id' => $request->role_id]);
 
 
         $user->save();
