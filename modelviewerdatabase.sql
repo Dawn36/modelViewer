@@ -1,4 +1,22 @@
+/*
+SQLyog Ultimate v12.09 (64 bit)
+MySQL - 5.7.33 : Database - model_viewer
+*********************************************************************
+*/
 
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`model_viewer` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `model_viewer`;
+
+/*Table structure for table `design_views` */
 
 DROP TABLE IF EXISTS `design_views`;
 
@@ -11,11 +29,11 @@ CREATE TABLE `design_views` (
   `updated_at` datetime DEFAULT NULL,
   `updated_by` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 /*Data for the table `design_views` */
 
-insert  into `design_views`(`id`,`user_id`,`the_models_id`,`created_at`,`created_by`,`updated_at`,`updated_by`) values (1,1,2,'2022-10-04 21:19:39',1,NULL,NULL),(2,1,1,'2022-10-04 21:19:57',1,NULL,NULL),(3,2,1,'2022-10-04 21:19:57',1,NULL,NULL),(4,3,1,'2022-10-04 21:19:57',1,NULL,NULL),(5,4,1,'2022-10-04 21:19:57',1,NULL,NULL),(6,4,1,'2022-09-28 21:19:57',1,NULL,NULL),(7,4,2,'2022-10-05 19:03:33',4,NULL,NULL),(8,4,3,'2022-10-05 19:21:28',4,NULL,NULL);
+insert  into `design_views`(`id`,`user_id`,`the_models_id`,`created_at`,`created_by`,`updated_at`,`updated_by`) values (1,1,2,'2022-10-04 21:19:39',1,NULL,NULL),(2,1,1,'2022-10-04 21:19:57',1,NULL,NULL),(3,2,1,'2022-10-04 21:19:57',1,NULL,NULL),(4,3,1,'2022-10-04 21:19:57',1,NULL,NULL),(5,4,1,'2022-10-04 21:19:57',1,NULL,NULL),(6,4,1,'2022-09-28 21:19:57',1,NULL,NULL),(7,4,2,'2022-10-05 19:03:33',4,NULL,NULL),(8,4,3,'2022-10-05 19:21:28',4,NULL,NULL),(9,0,1,'2022-10-08 22:08:39',0,NULL,NULL);
 
 /*Table structure for table `failed_jobs` */
 
@@ -129,7 +147,7 @@ CREATE TABLE `role_user` (
 
 /*Data for the table `role_user` */
 
-insert  into `role_user`(`role_id`,`user_id`,`user_type`) values (1,1,'App\\Models\\User'),(2,4,'App\\Models\\User');
+insert  into `role_user`(`role_id`,`user_id`,`user_type`) values (1,1,'App\\Models\\User'),(1,4,'App\\Models\\User'),(1,13,'App\\Models\\User'),(1,14,'App\\Models\\User'),(2,11,'App\\Models\\User'),(2,12,'App\\Models\\User'),(2,15,'App\\Models\\User');
 
 /*Table structure for table `roles` */
 
@@ -165,11 +183,11 @@ CREATE TABLE `the_models` (
   `created_by` bigint(20) DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 /*Data for the table `the_models` */
 
-insert  into `the_models`(`id`,`user_id`,`name`,`description`,`model_img`,`model_3d_img`,`created_at`,`created_by`,`updated_at`) values (1,1,'hoursed','<p>hi dajsdjas djaskjd askjd a</p>','uploads/the_model/1/202210031224logo-dark.png','uploads/the_model/1/202210031138Horse.glb','2022-10-03 11:38:55',1,'2022-10-03 12:37:20'),(2,2,'h','<p>asdasd asd asd a</p>','uploads/the_model/1/202210042049CAPFhI.png','uploads/the_model/1/202210042049Ankit.glb','2022-10-04 08:49:15',1,'2022-10-04 20:58:16');
+insert  into `the_models`(`id`,`user_id`,`name`,`description`,`model_img`,`model_3d_img`,`created_at`,`created_by`,`updated_at`) values (1,1,'hourseda',NULL,'uploads/the_model/1/202210031224logo-dark.png','uploads/the_model/1/202210052258rug-barbaroi.glb','2022-10-03 11:38:55',1,'2022-10-08 22:18:24'),(2,2,'h','<p>asdasd asd asd aa</p>','uploads/the_model/1/202210042049CAPFhI.png','uploads/the_model/1/202210042049Ankit.glb','2022-10-04 08:49:15',1,'2022-10-05 20:54:50'),(4,1,'Wilma Fischer',NULL,'uploads/the_model/1/202210052302logo-dark (1).png','uploads/the_model/1/202210052302rug-amazigh.glb','2022-10-05 11:02:41',1,'2022-10-05 23:02:41'),(5,1,'Rosalyn Duncan',NULL,'uploads/the_model/1/202210052310logo-dark (1).png','uploads/the_model/1/202210052310rug-amazigh.glb','2022-10-05 11:10:18',1,'2022-10-05 23:10:18'),(6,1,'Clarke Everett',NULL,'uploads/the_model/1/202210052310logo-dark (1).png','uploads/the_model/1/202210052310202210031138Horse.glb','2022-10-05 11:10:38',1,'2022-10-05 23:10:38'),(7,9,'dawngill',NULL,'uploads/the_model/9/202210061210docker-container-status-tag-7.png','uploads/the_model/9/202210061210rug-barbaroi.glb','2022-10-06 12:10:17',9,'2022-10-06 12:10:17'),(8,11,'dawn',NULL,'uploads/the_model/11/202210081201docker-container-status-tag-7.png','uploads/the_model/11/202210081201Ankit.glb','2022-10-08 12:01:30',11,'2022-10-08 12:01:30'),(9,1,'Cherokee Conway',NULL,'uploads/the_model/1/202210082213logo-dark (1) - Copy.png','uploads/the_model/1/202210082213rug-amazigh.glb','2022-10-08 10:13:43',1,'2022-10-08 22:13:43'),(10,1,'Christine Knapp',NULL,'uploads/the_model/1/202210082217logo-dark.png','uploads/the_model/1/202210082217202210031138Horse.glb','2022-10-08 10:17:07',1,'2022-10-08 22:17:07');
 
 /*Table structure for table `users` */
 
@@ -182,6 +200,7 @@ CREATE TABLE `users` (
   `contact_no` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `profile_picture` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'blank.png',
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_type` bigint(20) DEFAULT NULL,
   `company_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -192,11 +211,11 @@ CREATE TABLE `users` (
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `users` */
 
-insert  into `users`(`id`,`first_name`,`last_name`,`contact_no`,`profile_picture`,`email`,`company_name`,`email_verified_at`,`password`,`password_show`,`remember_token`,`created_at`,`updated_at`,`deleted_at`) values (1,'Dawn','Aa','0332','blank.png','dawngill08@gmail.com','asd',NULL,'$2y$10$kyCo9t.rHh4e3ULfS0tYT.PbLUayloRar13W1SI.z1RhTAZ8DHuxm','aa',NULL,'2022-10-03 13:41:06','2022-10-03 10:13:48',NULL),(2,'Amber','Perkins','82','blank.png','tadid@mailinator.com',NULL,NULL,'$2y$10$l2PVr9HcXbsTuHVD2nAi9uBPYp2uOa1y8rnBQYcjjr.4ZoakYvdcu','aa',NULL,'2022-10-03 09:48:04','2022-10-03 09:48:04',NULL),(3,'Keith','Vargas','85','blank.png','hiwatede@mailinator.com',NULL,NULL,'$2y$10$fti8LDBZGo1A7d6oOXmBlOn4GnLIwdsuN8anhLFeh4p2kDCn0Memq','aa',NULL,'2022-10-03 09:49:31','2022-10-03 09:49:31',NULL),(4,'Zelda','Prince','02303','blank.png','gamyxemipa@mailinator.com','aa',NULL,'$2y$10$kyCo9t.rHh4e3ULfS0tYT.PbLUayloRar13W1SI.z1RhTAZ8DHuxm','aa',NULL,'2022-10-03 09:49:45','2022-10-03 10:54:10',NULL);
+insert  into `users`(`id`,`first_name`,`last_name`,`contact_no`,`profile_picture`,`email`,`user_type`,`company_name`,`email_verified_at`,`password`,`password_show`,`remember_token`,`created_at`,`updated_at`,`deleted_at`) values (1,'Dawn','Aa','0332','blank.png','dawngill08@gmail.com',1,'asd',NULL,'$2y$10$kyCo9t.rHh4e3ULfS0tYT.PbLUayloRar13W1SI.z1RhTAZ8DHuxm','aa',NULL,'2022-10-03 13:41:06','2022-10-03 10:13:48',NULL),(11,'Austin','Eaton','95','11/202210081202docker-container-status-tag-7.png','fizasaxy@mailinator.com',2,'Gibbs Donovan Inc',NULL,'$2y$10$U8QFvMGl09Lqq9PyLAXnoOxeAdwkncETsz3NLyvMEFhmt.P8WBcGi','aa',NULL,'2022-10-08 12:01:14','2022-10-08 12:02:47',NULL),(12,'Bertha','Case','98','blank.png','siwufij@mailinator.com',2,'Schmidt and Reese LLC',NULL,'$2y$10$fDQCJA43IiWjibPOaarYFOFfybbcxY6Zy/WwNcgxtyc9Ev7Ms0y1.','aa',NULL,'2022-10-08 12:02:59','2022-10-08 12:02:59',NULL),(13,'Troy','Crane',NULL,'blank.png','diwi@mailinator.com',1,'Paul Wilson Trading',NULL,'$2y$10$9WCIJWCerlVBPZXzZQ.6leXEgbQ0jdm0tpflYD089gyKiWaeOyx.u','aa',NULL,'2022-10-08 12:44:47','2022-10-08 12:44:47',NULL),(14,'Ulric','Rivas','5','14/202210081245docker-container-status-tag-7.png','kashir@gmail.com',1,'Mason Dawson Associates',NULL,'$2y$10$Z9MwtJei0iG6qHFiPpeP9edHM0aSE1mh5UYCkGzCKOrTvGSUp7eea','aa',NULL,'2022-10-08 12:45:20','2022-10-08 12:45:20',NULL),(15,'Ashton','Moss','43','15/202210081258logo-dark (1).png','leqam@mailinator.com',2,'Weaver Pearson Trading',NULL,'$2y$10$VXlmXMlnud3o4nzWK3kxyuViAV0zdUwAPGzzwAChcj2PQR.bwn.ne','aa',NULL,'2022-10-08 12:58:34','2022-10-08 12:58:45',NULL);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
